@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/imagen/favicon.ico" />
+  <link rel="icon" type="image/png" href="/imagen/favicon.ico" />
+  <link rel="stylesheet" href="estilo_quejas.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memo Quejas +</title>
+
+
+</head>
+
+<body>
+
+  <header id="menu_quejas" class="menu_quejas">
+    <ul>
+      <li><a href="/pages/quejas/memo_gpon_internet.html">Internet Gpon</a></li>
+      <li><a href="/pages/quejas/memo_dsl_internet.html">Internet DSL</a></li>
+      <li><a href="/pages/quejas/memo_hfc_internet.html">Internet HFC</a></li>
+      <li><a href="/pages/quejas/memo_hfc_tv.html">TV HFC</a></li>
+      <li><a href="/pages/quejas/memo_dth.html">TV DTH</a></li>
+      <li><a href="/pages/quejas/memo_iptv.html">IPTV</a></li>
+      <li><a href="/pages/quejas/memo_linea.html">Linea Fija</a></li>
+    </ul>
+  </header>
+
+
+
+  <main>
+    <!-- ... INTERNET GPON -->
+
+    <section id="gpon_internet" class="main-section">
+      <div class="gpon_internet" id="gpon">
+        <p class="titulo_memo" >INTERNET GPON</p>  
+        <form class="form_quejas">
+          <label for="cpe">ID LLamada</label> 
+          <input type="text" id="id" name="id" placeholder="ID llamada" required>
+          <label for="luz">Numero Queja</label>
+          <input type="text" id="queja" name="queja" placeholder="Numero Queja" required>
+          <label for="num_tel_gpon">Luz Pon:</label>
+          <input type="text" id="num_tel_gpon" name="num_tel_gpon" placeholder="Luz PON" required>
+          <label for="serie_ont">Luz LOS:</label>
+          <input type="text" id="serie_ont" name="serie_ont" placeholder="Luz LOS" required>
+          <label for="slot">Canal Dañado:</label>
+          <input type="text" id="slot" name="slot" placeholder="Canal Dañado" required>
+          <label for="problema">Problema reportado:</label>
+          <input type="text" id="problema" name="problema" placeholder="Colocar la Falla reportada" required>
+          <label for="pruebas">Pruebas realizadas:</label>
+          <input type="text" id="pruebas" name="pruebas" placeholder="Colocar las pruebas realizadas" required>
+          <label for="contacto">Contacto en sitio:</label>
+          <input type="text" id="contacto" name="contacto" placeholder="Contacto en sitio" required>
+          <label for="tel">Tel de contacto:</label>
+          <input type="text" id="tel" name="tel" placeholder="Tel de contacto" required>
+          <label for="direccion">Direccion:</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Direccion"
+            oninput="capitalizeFirstLetter(this)" required>
+          <label for="horario">Horario de visita:</label>
+          <input type="text" id="horario" name="horario" value="08:00 a 17:00" required>
+
+
+
+          <div class="botones-copiar">
+            <button class="boton_memo" type="button" onclick="formularioUtils.copiarFormularioQuejas()">Copiar Memo</button>
+
+          </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+
+const formularioUtils = {
+    // Función para capitalizar la primera letra de cada palabra en un campo de texto
+    capitalizarPrimeraLetra: function(elemento) {
+        elemento.value = elemento.value.toLowerCase().replace(/^\w|\s\w/g, function(letra) {
+            return letra.toUpperCase();
+        });
+    },
+
+    // Función para copiar el contenido del formulario de quejas
+    copiarFormularioQuejas: function() {
+        const formulario = document.querySelector('form'); // Selecciona el formulario directamente
+        const inputs = formulario.getElementsByTagName('input');
+        let textoCopiado = '';
+
+        // Iterar sobre los inputs y recoger sus valores
+        for (let i = 0; i < inputs.length; i++) {
+            const etiqueta = inputs[i].previousElementSibling ? inputs[i].previousElementSibling.innerText : 'Campo sin etiqueta';
+            const valor = inputs[i].value;
+            textoCopiado += etiqueta + ': ' + valor + '\n';
+        }
+
+        // Usar el API moderno para copiar al portapapeles
+        navigator.clipboard.writeText(textoCopiado).then(function() {
+            alert('Formulario copiado al portapapeles. Pega en el Bloc de notas o en tu editor preferido.');
+        }).catch(function(err) {
+            console.error('Error al copiar el texto: ', err);
+        });
+    }
+};
+
+
+</script> 
+
+</body>
+
+</html>

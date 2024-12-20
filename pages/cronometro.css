@@ -1,0 +1,38 @@
+
+.circular-timer {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.timer-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.background-ring {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 6;
+}
+
+.progress-ring {
+  fill: none;
+  stroke: #e57373;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 226.2; /* Circunferencia del círculo (2πr, con r=36) */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #e57373;
+  font-weight: bold;
+}

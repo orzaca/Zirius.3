@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconos con Títulos</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f7f8fc;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Título estilizado */
+        h1 {
+            font-size: 2em;
+            color: #FF6F61;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Contenedor de íconos */
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* Estilos para cada ícono */
+        .icon {
+            width: 110px;
+            text-align: center;
+        }
+
+        .icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 110px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        /* Estilos para la imagen de cada ícono */
+        .icon img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        /* Efecto de hover en los íconos */
+        .icon a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Títulos de cada ícono */
+        .icon p {
+            margin: 8px 0 0;
+            font-size: 0.9em;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Botón de regreso */
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none !important;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #ff5a4a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo de Paquetes HFC</h1>
+
+<div class="icon-container">
+    <!-- Icono 1 -->
+    <div class="icon">
+        <a href="basico/bd.pdf">
+            <img src="tv.png" alt="Icono 1">
+        </a>
+        <p>Basico HD - HFC</p>
+    </div>
+    
+    <!-- Icono 2 -->
+    <div class="icon">
+        <a href="basico/avanzado.pdf">
+            <img src="smart-tv.png" alt="Icono 2">
+        </a>
+        <p>Avanzado - DTH</p>
+    </div>
+    
+    <div class="icon">
+        <a href="basico/avanzado hd.pdf">
+            <img src="hd.png" alt="Icono 2">
+        </a>
+        <p>Avanzado HD - DTH</p>
+    </div>
+    
+    <div class="icon">
+        <a href="basico/avanzado hd p.pdf">
+            <img src="television.png" alt="Icono 2">
+        </a>
+        <p>Avanzado HD Plus - DTH</p>
+    </div>
+    
+    <div class="icon">
+        <a href="basico/paquetes.pdf">
+            <img src="hbo.png" alt="Icono 2">
+        </a>
+        <p>Paquetes Adicionales- DTH</p>
+    </div>
+</div>
+
+<div class="boton">
+    <button class="button" onclick="goBack()">Regresar</button>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back(); // Función que regresa a la página anterior
+    }
+</script>
+
+</body>
+</html>

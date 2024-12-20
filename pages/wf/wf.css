@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #A7C5EB, #FDE8CD); /* Fondo degradado */
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu {
+    background-color: #4B0082; /* Color púrpura oscuro */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top-menu li {
+    margin: 0;
+}
+
+.top-menu li a {
+    color: #ffffff; /* Color del texto */
+    text-decoration: none;
+    padding: 8px 12px; /* Reducir el padding */
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.top-menu li a:hover {
+    background-color: #FFD700; /* Amarillo dorado al pasar el cursor */
+    transform: translateY(-3px);
+}
+
+.top-menu li a i {
+    margin-right: 10px;
+}
+
+.container {
+    position: absolute;
+    left: 5%;
+    width: 450px;
+    padding: 20px; /* Mayor padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    margin: 20px;
+    top: 60px; 
+    background-color: #FFFFFF; /* Fondo blanco */
+}
+
+.message {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.message p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    background-color: #F1F1F1; /* Fondo gris claro */
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-button {
+    font-size: 14px;
+    color: #4B0082; /* Color púrpura oscuro */
+}
+
+.form-container {
+    display: none;
+    margin-top: 10px;
+    padding: 10px; /* Reducir el padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #F9F9F9;
+    width: 80%; /* Ancho completo */
+}
+
+.form-container form div {
+    margin-bottom: 5px; /* Reducir espacio entre campos */
+}
+
+.form-container label {
+    display: none; /* Ocultar completamente los labels */
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"] {
+    width: 90%;
+    padding: 8px; /* Reducir el padding */
+    font-size: 12px; /* Reducir tamaño de fuente */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-container input[type="button"] {
+    padding: 8px 15px; /* Reducir tamaño de los botones */
+    font-size: 12px; /* Reducir tamaño de fuente */
+    border: none;
+    border-radius: 4px;
+    background-color: #4B0082; /* Color púrpura oscuro */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container input[type="button"]:hover {
+    background-color: #6A5ACD; /* Color púrpura más claro */
+}
+
+.botones-copiar {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px; /* Reducir el espacio entre botones */
+    margin-top: 5px; /* Reducir margen superior */
+}
+
+button {
+    padding: 8px; /* Reducir tamaño de los botones generales */
+    font-size: 12px; /* Reducir tamaño de fuente */
+    border-radius: 3px; /* Ajustar bordes */
+    width: 100%;
+    border: none;
+    background: #FFF;
+    color: #9B59B6; /* Color púrpura */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+    background: #8E44AD; /* Color púrpura más oscuro */
+    color: #FFF;
+}
+
+.titulo_wf {
+    color: #CB4335; /* Color rojo */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px; /* Tamaño de fuente más grande */
+}
+
+

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
+
+form label, form input, form textarea {
+    display: block;
+    margin: 10px 0;
+}
+
+form input, form textarea {
+    width: 300px;
+    padding: 5px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0%; left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+/* Modal de previsualización */
+#previewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+#previewModal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Centrado del contenido dentro del modal */
+#previewTitle, #previewText {
+    margin-bottom: 20px;
+}
+
+#previewImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón de cerrar */
+#closePreviewModal {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px; /* Añadir espacio desde el contenido */
+    width: 150px; /* Establecer un ancho fijo */
+    margin-left: auto; /* Centrar el botón */
+    margin-right: auto; /* Centrar el botón */
+    display: block; /* Asegurarse de que el botón sea un bloque */
+}
+
+/* Opcional: Cambiar el estilo cuando el botón de cerrar está en hover */
+#closePreviewModal:hover {
+    background-color: darkred;
+}
+
+

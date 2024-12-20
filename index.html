@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zirius Desk</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> 
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            width: 600px; /* Aumenta el tamaño del logo */
+            height: auto;
+            opacity: 0; /* Comienza invisible */
+            animation: fadeIn 1s forwards; /* Aplica la animación */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px); /* Comienza desde arriba */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Termina en su posición original */
+            }
+        }
+
+        .progress-container {
+            width: 80%; /* Ancho de la barra de progreso */
+            height: 20px; /* Altura de la barra de progreso */
+            background-color: #ccc; /* Color de fondo */
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 20px auto; /* Margen centrado */
+            overflow: hidden; /* Oculta el contenido desbordante */
+        }
+
+        .progress-bar {
+            height: 100%; /* Altura de la barra interna */
+            width: 0%; /* Comienza vacía */
+            background-color: #4da0e8; /* Color de la barra de progreso */
+            animation: loading 3s forwards; /* Animación de carga */
+        }
+
+        @keyframes loading {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/img/Zirius.png" alt="Logo" class="logo">
+        <div class="progress-container">
+            <div class="progress-bar"></div> <!-- Barra de progreso -->
+        </div>
+    </div>
+
+    <script>
+        // Redirigir a otra página después de 3 segundos
+        setTimeout(function() {
+            window.location.href = '/pages/login.php'; // Cambia a la URL deseada
+        }, 3000);
+    </script>
+</body>
+</html>

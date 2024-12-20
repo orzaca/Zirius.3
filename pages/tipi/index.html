@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block de Notas</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      background: white;
+    }
+
+    .notepad-container {
+      background: #ffffff;
+      color: #000;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px 5px 0 0;
+      background: #f1948a;
+      color: white;
+     transition: background 0.3s;
+    }
+
+    .tab.active {
+      background: #cb4335;
+      color: #000;
+      border-bottom: 2px solid #ffffff;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    textarea {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+      outline: none;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea:focus {
+      border-color: #00b4d8;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    button {
+      background: #cb4335;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #f1948a;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .form-group textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .form-group label {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="notepad-container">
+    <div class="tabs">
+      <div class="tab" data-tab="block">Quejas / Codigos</div>
+      <div class="tab" data-tab="wf">WF</div>
+      <div class="tab active" data-tab="tipificador">Tipificador</div>
+    </div>
+
+    <!-- Contenido de Quejas -->
+    <div class="content" id="block">
+      <select id="noteSelectorQuejas">
+         <option value="note1">INTERNET DSL / MSAN</option>
+        <option value="note2">INTERNET HFC</option>
+        <option value="note3">INTERNET GPON</option>
+        <option value="note4">TV HFC</option>
+        <option value="note5">TV DTH</option>
+        <option value="note6">IPTV</option>
+        <option value="note7">LINEA FIJA</option>
+        <option value="note8">CODIGOS ADSL / MSAN</option>
+        <option value="note9">CODIGOS HFC / TV HFC</option>
+        <option value="note10">CODIGOS GPON/IPTV</option>
+        <option value="note11">CODIGOS DTH</option>
+               </select>
+      <textarea id="notepadQuejas" placeholder="Escribe aquí..."></textarea>
+      <div class="buttons">
+      
+        <button id="copyButtonQuejas">Copiar</button>
+      </div>
+    </div>
+
+    <!-- Contenido de WF -->
+    <div class="content" id="wf">
+      <select id="noteSelectorWF">
+            <option value="wf1">Cambio equipo X aumento de vel</option>
+        <option value="wf2">Vencido Operaciones</option>
+        <option value="wf3">Vencido Comercial</option>
+        <option value="wf4">Filtrado MAC</option>
+        <option value="wf5">Claro Video</option>
+        <option value="wf6">Bloqueo Mayor a 2 Horas</option>
+        <option value="wf7">Cita Incumplida</option>
+        <option value="wf8">Paquete de Canales</option>
+        <option value="wf9">Orden de Conectividad</option>
+        <option value="wf10">Daño a la Infraestructura</option>
+        <option value="wf11">Migración a GPON</option>
+        <option value="wf12">Configuracion WIF / Otros WF</option>
+        <option value="wf13">Devolucion de Llamada</option>
+        <option value="wf14">Reparacion Quejas</option>
+        <option value="wf15">Mala atencion al Tecnico</option>
+        <option value="wf16">Locucion Mora Activa</option>
+        <option value="wf17">Servicios Digitales</option>
+        <option value="wf18">Plantilla WF 1</option>
+        <option value="wf19">Plantilla WF 2</option>
+        <option value="wf20">Plantilla WF 3</option>
+      </select>
+      <textarea id="notepadWF" placeholder="Escribe aquí..."></textarea>
+      <div class="buttons">
+
+        <button id="copyButtonWF">Copiar</button>
+      </div>
+    </div>
+
+    <!-- Contenido de Tipificador -->
+    <div class="content active" id="tipificador">
+      <h5>Siempre Se debe tifipicar con el Memo de la queja, de lo contrario se penaliza </h5>
+      <form id="tipificadorForm">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input type="text" id="id" name="id" placeholder="Ingrese el ID">
+        </div>
+        <div class="form-group">
+          <label for="numeroLinea">Número de Línea:</label>
+          <input type="text" id="numeroLinea" name="numeroLinea" placeholder="Ingrese el número de línea">
+        </div>
+        <div class="form-group">
+          <label for="nombreCliente">Nombre del Cliente:</label>
+          <input type="text" id="nombreCliente" name="nombreCliente" placeholder="Ingrese el nombre del cliente">
+        </div>
+        <div class="form-group">
+          <label for="fallaReportada">Falla Reportada:</label>
+          <textarea id="fallaReportada" name="fallaReportada" placeholder="Describe la falla reportada"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pruebasRealizadas">Pruebas Realizadas:</label>
+          <textarea id="pruebasRealizadas" name="pruebasRealizadas" placeholder="Describe las pruebas realizadas"></textarea>
+        </div>
+        <div class="buttons">
+        
+          <button type="button" id="copyButtonTipificador">Copiar</button>
+          <button type="button" id="clearButtonTipificador">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+
+      // Tab switching
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Functions for Quejas
+      const noteSelectorQuejas = document.getElementById('noteSelectorQuejas');
+      const notepadQuejas = document.getElementById('notepadQuejas');
+      const copyButtonQuejas = document.getElementById('copyButtonQuejas');
+      const saveButtonQuejas = document.getElementById('saveButtonQuejas');
+
+      const loadContentQuejas = () => {
+        fetch(`load_note.php?id=${noteSelectorQuejas.value}`)
+          .then(response => response.json())
+          .then(data => {
+            notepadQuejas.value = data.content || '';
+            saveButtonQuejas.disabled = !data.content;
+          });
+      };
+
+      noteSelectorQuejas.addEventListener('change', loadContentQuejas);
+      loadContentQuejas();
+
+      copyButtonQuejas.addEventListener('click', () => {
+        navigator.clipboard.writeText(notepadQuejas.value);
+        alert('Texto copiado.');
+      });
+
+      // Functions for WF
+      const noteSelectorWF = document.getElementById('noteSelectorWF');
+      const notepadWF = document.getElementById('notepadWF');
+      const copyButtonWF = document.getElementById('copyButtonWF');
+      const saveButtonWF = document.getElementById('saveButtonWF');
+
+      const loadContentWF = () => {
+        fetch(`load_note.php?id=${noteSelectorWF.value}`)
+          .then(response => response.json())
+          .then(data => {
+            notepadWF.value = data.content || '';
+            saveButtonWF.disabled = !data.content;
+          });
+      };
+
+      noteSelectorWF.addEventListener('change', loadContentWF);
+      loadContentWF();
+
+      copyButtonWF.addEventListener('click', () => {
+        navigator.clipboard.writeText(notepadWF.value);
+        alert('Texto copiado.');
+      });
+
+      // Functions for Tipificador
+      const tipificadorForm = document.getElementById('tipificadorForm');
+      const clearButtonTipificador = document.getElementById('clearButtonTipificador');
+
+      clearButtonTipificador.addEventListener('click', () => {
+        tipificadorForm.reset();
+      });
+
+      const copyButtonTipificador = document.getElementById('copyButtonTipificador');
+
+      copyButtonTipificador.addEventListener('click', () => {
+        const formData = new FormData(tipificadorForm);
+        let text = '';
+
+        formData.forEach((value, key) => {
+          text += `${key}: ${value}\n`;
+        });
+
+        navigator.clipboard.writeText(text);
+        alert('Texto copiado.');
+      });
+    });
+  </script>
+</body>
+</html>

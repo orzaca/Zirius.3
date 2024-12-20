@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Docsis</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #0D4D4D;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        caption {
+            font-size: 1.3em;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>Valores de Portadoras Docsis</caption>
+    <thead>
+        <tr>
+            <th>Docsis</th>
+            <th>Portadoras </th>
+            <th>Upstream (Tx)</th>
+            <th>Downstream (Rx) - SNR</th>
+            <th>SNR</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>3.0</td>
+            <td>2</td>
+            <td>40 dB a 53 dB</td>
+            <td>-9 dB a 10 dB</td>
+            <td>Mayor o igual a 33 dB</td>
+        </tr>
+        <tr>
+            <td>3.0</td>
+            <td>3 o 4</td>
+            <td>40 dB a 50 dB</td>
+            <td>-9 dB a 10 dB</td>
+            <td>Mayor o igual a 33 dB</td>
+        </tr>
+      
+
+    </tbody>
+</table>
+
+</body>
+</html>

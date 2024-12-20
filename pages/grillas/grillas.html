@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconos con Títulos</title>
+    <style>
+        /* Fondo con gradiente desvanecido y animado */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(120deg, #FF6F61, #FFD194, #8EC5FC, #E0C3FC);
+            background-size: 200% 200%;
+            animation: gradientBackground 8s ease infinite;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Animación de fondo */
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Título */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin: 40px 0 20px;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        /* Animación de aparición del título */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contenedor de íconos */
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Estilos de íconos */
+        .icon {
+            width: 110px;
+            text-align: center;
+        }
+
+        .icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 110px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        /* Imágenes de los íconos */
+        .icon img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        /* Efecto hover en los íconos */
+        .icon a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Títulos de los íconos */
+        .icon p {
+            margin: 8px 0 0;
+            font-size: 0.9em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Botón de regresar */
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none !important;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #ff5a4a;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+<h1>Catálogo de Paquetes Claro TV</h1>
+<div class="icon-container">
+    <!-- Icono 1 -->
+    <div class="icon">
+        <a href="dth/dth.html">
+            <img src="dth/television.png" alt="Icono 1">
+        </a>
+        <p>GRILLA DTH</p>
+    </div>
+    
+    <!-- Icono 2 -->
+    <div class="icon">
+        <a href="hfc/hfc.html">
+            <img src="dth/televisor.png" alt="Icono 2">
+        </a>
+        <p>GRILLA HFC</p>
+    </div>
+    
+    <div class="icon">
+        <a href="iptv/iptv.html">
+            <img src="dth/smart-tv.png" alt="Icono 2">
+        </a>
+        <p>GRILLA IPTV</p>
+    </div>
+    
+
+</div>
+
+</body>
+</html>

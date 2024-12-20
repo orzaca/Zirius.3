@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="tvhfc.css"> 
+        <title>Checklist</title>
+    </head>
+    <body>
+          <!-- Menu de Checklist -->
+         <nav class="menu-horizontal">
+          <ul>
+                <li><a href="/pages/checklist/inicio_checklist.html"> Menu</a></li>
+                <li><a href="/pages/checklist/tv_hfc/inicio_tv.html">Inicio Pruebas</a></li> 
+                <li><a href="/pages/checklist/tv_hfc/sin_senal_tv.html">Sin Señal</a></li>
+                <li><a href="/pages/checklist/tv_hfc/sin_audio_tv.html">Sin Audio</a></li>
+                <li><a href="/pages/checklist/tv_hfc/canales_sin_senal_tv.html">Algunos canales sin señal</a></li>
+                <li><a href="/pages/checklist/tv_hfc/cintillo_venta_tv.html">Cintillo de venta</a></li>
+                <li><a href="/pages/checklist/tv_hfc/dta_inhibido_tv.html">Dta Inhibido</a></li>
+                <li><a href="/pages/checklist/tv_hfc/falla_guia_tv.html">Guia Interactiva</a></li>
+                <li><a href="/pages/checklist/tv_hfc/imagen_pixeleada_tv.html">Pxielada / Congelada</a></li>
+                <li><a href="/pages/checklist/tv_hfc/stb_no_enciende_tv.html">STB no enciende</a></li>
+            </ul>
+        
+        
+        </nav>
+
+
+      <!-- texto Flotante 
+                <div id="floatingReminder" class="reminder-container">
+                    <div class="reminder-header">
+                        <span class="reminder-close" onclick="closeReminder()">×</span>
+                    </div>
+                        <h4>Recuerda:</h4>
+                        <p>Siempre colocar en los memos de las quejas o de tipificacion, las pruebas reales de la llamada, si no las coloca seran penalizadas</p>
+               </div>-->
+
+
+           <!-- Step de Inicio -->
+        <div class="container">
+            <h3>SIN SEÑAL TV</h3>
+            <div id="step1" class="step">
+            <h4>Acciones:</h4>
+            <h4>Revisar las opciones con control remoto</h4>
+                <p align="left">1. Verificar las opciones SAP TV y SYB, Volumen TV y STB, Mute TV y STB</p>
+                <p align="left">2. Verificar las conexiones fisicas entre en STB y TV, si esta en RCA que los colores esten donde deben estar</p>
+                <p align="left">3. Recomendar hacer pruebas con otros cables para descartar daños en el cable</p>
+             <h3>¿Tiene Audio?</h3>
+             <button class="button" onclick="showResult('Tipificar como soporte efectivo: Reclamos ▶ Avería ▶ TV HFC ▶ Sin Audio ▶ Conexiones Fisica -R')">SI</button>
+            <button class="button" onclick="nextStep('step2', 'step1')">NO</button>
+        </div>
+        
+            <!-- Step 2 -->
+            <div id="step2" class="step hidden">
+                <h4>Enviar los siguientes Comandos en forma Ordenada</h4>
+                <p align="left">1- Ejecutar el comando <b>Cold Init</b><i> *No usar en STB con DVR*</i></p>
+                 <button class="button" onclick="showResult('Tipificar como soporte efectivo: Reclamos ▶ Avería ▶ TV HFC ▶ Sin Audio ▶ Conexiones Fisica -R')">Tiene Audio</button>
+                <button class="button" onclick="showResult('Se Genera Avería - Enviar a Etapa CZO - Tipificar como Reclamos ▶ Avería ▶ TV HFC ▶ Sin Audio ▶ Se genera Averia')">No tiene Audio</button>
+            </div>
+
+            <!-- Step 3 -->
+
+          
+
+           
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span> <!-- Botón de cierre -->
+                        <img id="modalImage" src="" alt="Imagen en modal" style="width:100%; height:auto;" />
+                    </div>
+                </div>
+
+            <!-- Contenedor para mostrar el resultado -->
+            <div id="resultContainer"></div>
+        </div>
+
+    <script>
+        // Función para avanzar de un paso a otro
+        function nextStep(next, current) {
+            document.getElementById(current).classList.add('hidden');
+            document.getElementById(next).classList.remove('hidden');
+
+            // Ocultar el contenedor del resultado cuando se cambia de paso
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.style.display = 'none';
+        }
+
+        // Mostrar resultado en el contenedor de la página
+        function showResult(message) {
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.style.display = 'block'; // Mostrar el contenedor
+            resultContainer.innerHTML = message; // Mostrar el mensaje en el contenedor
+        }
+         </script>
+
+           <script>
+    // Función para mostrar el modal con la imagen seleccionada
+    function showModal(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc; // Cambia la imagen en el modal
+        document.getElementById('myModal').style.display = 'block'; // Muestra el modal
+    }
+
+    // Obtener el modal y el botón de cierre
+    var modal = document.getElementById('myModal');
+    var closeBtn = document.getElementsByClassName('close')[0];
+
+    // Función para cerrar el modal cuando se hace clic en el botón de cierre
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Función para cerrar el modal cuando se hace clic fuera del contenido del modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+        
+
+  <script>
+</script>
+
+
+
+
+</body>
+</html>

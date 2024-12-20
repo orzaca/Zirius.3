@@ -1,0 +1,154 @@
+/* Diseño general */
+body {
+    background: linear-gradient(135deg, #ff5f5f, #8db4ff, #000000); /* Fondo degradado en tonos rojo, azul suave y negro */
+    background-size: 200% 200%; /* Aumenta el tamaño del fondo para la animación */
+    animation: gradientAnimation 8s ease infinite; /* Animación del fondo */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Contenedor del formulario */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.auth-form {
+    background: rgba(255, 255, 255, 0.9); /* Color blanco suave para el formulario */
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 0, 0, 0.5); /* Efecto de sombra suave */
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    animation: float 3s ease-in-out infinite; /* Efecto de flotación más visible */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Aumenta el efecto de flotación */
+    }
+}
+
+/* Ícono del formulario */
+.form-icon img {
+    width: 150px;
+    opacity: 0.9;
+}
+
+/* Estilo para los inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 80%;
+    padding: 12px 15px 12px 45px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255, 0, 0, 0.1); /* Fondo suave en tonos rojos */
+    color: #000000; /* Texto negro */
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Efecto al hacer foco */
+.input-group input:focus {
+    background: rgba(255, 100, 100, 0.4); /* Fondo más intenso al hacer foco */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Efecto al pasar el mouse */
+.input-group input:hover {
+    background: rgba(255, 100, 100, 0.2); /* Fondo más intenso al pasar el mouse */
+    border: 2px solid rgba(255, 100, 100, 0.6); /* Borde rojo más oscuro */
+    box-shadow: 0 0 15px rgba(255, 100, 100, 0.5); /* Sombra más pronunciada */
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #CB4335 ; /* Degradado en tonos rojo y azul suave */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra 3D suave */
+}
+
+button:hover {
+    background: #ca6464;
+    transform: translateY(-2px);
+}
+
+/* Recuérdame y contraseña */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #000000; /* Texto negro */
+}
+
+.remember-forgot a {
+    color: #ff5f5f; /* Enlace en tono rojo */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.remember-forgot a:hover {
+    color: #ff9999; /* Tono más claro al pasar el mouse */
+}
+
+/* Pie de página */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+/* Mensajes de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}

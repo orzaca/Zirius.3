@@ -1,0 +1,16 @@
+      <div class="buttons">
+        <button id="saveButtonWF">Guardar WF</button>
+      </div>
+    </div>
+
+    <!-- Contenido de Tipificador -->
+    <div class="content active" id="tipificador">
+      <form id="tipificadorForm">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input type="text" id="id" name="id" placeholder="Ingrese el ID">
+        </div>
+        <div class="form-group">
+          <label for="numeroLinea">Número de Línea:</label>
+          <input type="text" id="numeroLinea" name="numeroLinea" placeholder="Ingrese el número de línea">
+        </div>

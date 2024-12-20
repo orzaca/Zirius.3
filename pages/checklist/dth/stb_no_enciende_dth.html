@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="dth.css"> 
+        <title>Checklist</title>
+    </head>
+    <body>
+          <!-- Menu de Checklist -->
+         <nav class="menu-horizontal">
+        <ul>
+                <li><a href="/pages/checklist/inicio_checklist.html"> Menu</a></li>
+                <li><a href="/pages/checklist/dth/inicio_dth.html">Inicio Pruebas</a></li> 
+                <li><a href="/pages/checklist/dth/sin_senal_dth.html">Sin Señal</a></li>
+                <li><a href="/pages/checklist/dth/sin_audio_dth.html">Sin Audio</a></li>
+                <li><a href="/pages/checklist/dth/canales_sin_senal_dth.html">Algunos canales sin señal</a></li>
+                <li><a href="/pages/checklist/dth/cintillo_cobro_dth.html">Cintillo de Cobro</a></li>
+                <li><a href="/pages/checklist/dth/blanco_negro_dth.html">Imagen Blanco y negro</a></li>
+                <li><a href="/pages/checklist/dth/pixeleada_dth.html">Pixeleada / Congelada</a></li>
+                <li><a href="/pages/checklist/dth/mensajes_dth.html">Mensajes Especiales</a></li>
+                <li><a href="/pages/checklist/dth/stb_no_enciende_dth.html">STB no enciende</a></li>
+            </ul>
+        
+        
+        </nav>
+
+
+      <!-- texto Flotante 
+                <div id="floatingReminder" class="reminder-container">
+                    <div class="reminder-header">
+                        <span class="reminder-close" onclick="closeReminder()">×</span>
+                    </div>
+                        <h4>Recuerda:</h4>
+                        <p>Siempre colocar en los memos de las quejas o de tipificacion, las pruebas reales de la llamada, si no las coloca seran penalizadas</p>
+               </div>-->
+
+
+           <!-- Step de Inicio -->
+        <div class="container">
+            <h3>POSIBLE STB DAÑADO</h3>
+            <div id="step1" class="step">
+            <h4>Acciones:</h4>
+                <p align="left">1. Solicitar al cliente el serial de la caja afectada</p>
+                <button class="button_modal" onclick="showModal('img/serial.png')">¿Como se Hace?</button>
+                <p align="left">2. Cambiar de Tomacoriente</p>
+                <p align="left">3. Si el STB no tiene boton de encendido, verificar las baterias del control remoto, si tiene un control de la misma marca usarlo y tratar de encender el STB</p>
+                <p align="left">4. Verificar funcionamiento del control remoto, en caso tal que presente daños, indicarle al cliente que debe ir a agencia y comprar uno nuevo</p>
+                   <h3>¿STB Enciende?</h3>
+               <button class="button" onclick="showResult('Soporte Efectivo - Tipificar como Reclamos ▶ Avería ▶ TV DTH ▶ Posible STB Dañado ▶ Se paso checklist Servicio ok')">SI</button>
+                <button class="button" onclick="showResult('Se Genera Averia: Reclamos ▶ Avería ▶ TV DTH ▶ Posible STB Dañado ▶ Se Genera Averia')">NO</button>
+        </div>
+        
+        
+                 
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span> <!-- Botón de cierre -->
+                        <img id="modalImage" src="" alt="Imagen en modal" style="width:100%; height:auto;" />
+                    </div>
+                </div>
+
+            <!-- Contenedor para mostrar el resultado -->
+            <div id="resultContainer"></div>
+        </div>
+
+    <script>
+        // Función para avanzar de un paso a otro
+        function nextStep(next, current) {
+            document.getElementById(current).classList.add('hidden');
+            document.getElementById(next).classList.remove('hidden');
+
+            // Ocultar el contenedor del resultado cuando se cambia de paso
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.style.display = 'none';
+        }
+
+        // Mostrar resultado en el contenedor de la página
+        function showResult(message) {
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.style.display = 'block'; // Mostrar el contenedor
+            resultContainer.innerHTML = message; // Mostrar el mensaje en el contenedor
+        }
+         </script>
+
+           <script>
+    // Función para mostrar el modal con la imagen seleccionada
+    function showModal(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc; // Cambia la imagen en el modal
+        document.getElementById('myModal').style.display = 'block'; // Muestra el modal
+    }
+
+    // Obtener el modal y el botón de cierre
+    var modal = document.getElementById('myModal');
+    var closeBtn = document.getElementsByClassName('close')[0];
+
+    // Función para cerrar el modal cuando se hace clic en el botón de cierre
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Función para cerrar el modal cuando se hace clic fuera del contenido del modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+        
+
+  <script>
+</script>
+
+
+
+
+</body>
+</html>

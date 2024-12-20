@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonas Operativas</title>
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: rgb(203, 67, 53);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    #search-container {
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    #search {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(203, 67, 53, 0.5);
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 14px;
+    }
+
+    td {
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      color: #333;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header>
+    <h1>Zonas Operativas</h1>
+  </header>
+
+  <!-- Barra de búsqueda -->
+  <div id="search-container">
+    <input type="text" id="search" placeholder="Buscar en las zonas..." onkeyup="filterTable()">
+  </div>
+
+  <!-- Tabla de Zonas Operativas -->
+  <table>
+    <thead>
+      <tr>
+        <th>Centro en Queja</th>
+        <th>DPTO / CENTRAL</th>
+        <th>Zonas</th>
+        <th>Bolsa de Qflow</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filas de ejemplo -->
+      <tr><td>CE</td><td>CENTRO</td><td>Zona 1,2,3 Y 6 </td><td>Metro Norte</td></tr>
+      <tr><td>LO</td><td>LOURDES</td><td>Zona 17 y 18</td><td>Metro Norte</td></tr>
+      <tr><td>DJ</td><td>DON JUSTO</td><td>Don Justo y san jose Pinula</td><td>Metro Norte</td></tr>
+      <tr><td>VH</td><td>VISTA HERMOSA</td><td> Vista Hermosa, Zona 15, 16, 5 (jardines)</td><td>Metro Norte</td></tr>
+      <tr><td>EN</td><td>EL NARANJO</td><td>Zona 3, 4, 5, 6, 9, 11 de Mixco. Zona 7 de Mixco</td><td>El Naranjo</td></tr>
+      <tr><td>MV</td><td>MONTE VERDE</td><td>Monte Verde y Zona 19</td><td>El Naranjo</td></tr>
+      <tr><td>GV</td><td>GUARDA VIEJO</td><td> Zona 8, 7, 11, 12</td><td>Metro Sur</td></tr>
+      <tr><td>NM</td><td>NIMAJUYU</td><td> Villa Canales y Nimajuyu</td><td>Metro Sur</td></tr>
+      <tr><td>TI</td><td>TIVOLI</td><td> Zonas 4, 9 y 10 </td><td>Metro Sur</td></tr>
+      <tr><td>VG</td><td>VILLA GUADALUPE</td><td> Zona 10, 13, 14 y Boca del Monte</td><td>Metro Sur</td></tr>
+      <tr><td>SC</td><td>SAN CRISTOBAL</td><td> Zona 1, 8, 10 de Mico y San Cristobal, Mixco</td><td>El Naranjo</td></tr>
+      <tr><td>VN</td><td>VILLA NUEVA</td><td> Villa Nueva y Amatitlan</td><td>El Naranjo</td></tr>
+      <tr><td>CN1</td><td>ESCUINTLA</td><td> Escuintla (no inclute Tiquisate y Nueva Concepcion)</td><td>Central</td></tr>
+      <tr><td>CN2</td><td>JUTIAPA</td><td> Juliapa</td><td>Central</td></tr>
+      <tr><td>CN3</td><td>CHIMALTENANGO</td><td> Chimaltenango</td><td>Central</td></tr>
+      <tr><td>CN4</td><td>SACATEPEQUEZ</td><td> Sacatepequez </td><td>Central</td></tr>
+      <tr><td>CN5</td><td>SANTA ROSA</td><td> Santa Rosa</td><td>Central</td></tr>
+      <tr><td>OC1</td><td>QUETZALTENANGO</td><td> Zonas de Xela_1, 2, 5, 10, Quetzaltenango Centro</td><td>Occidente</td></tr>
+      <tr><td>OC2</td><td>RETALHULEU</td><td> Retahuleu</td><td>Occidente</td></tr>
+      <tr><td>OC3</td><td>HUEHUETENANGO</td><td> Huehuetenango</td><td>Occidente</td></tr>
+      <tr><td>OC4</td><td>SAN MARCOS</td><td> San Marcos</td><td>Occidente</td></tr>
+      <tr><td>OC5</td><td>SUCHITEPEQUEZ</td><td> Suchitepequez, Tiquisate y Nuevo Concepcion </td><td>Occidente</td></tr>
+      <tr><td>OC6</td><td>SOLOLA, EL QUICHE</td><td> Solola y el quiche</td><td>Occidente</td></tr>
+      <tr><td>OC7</td><td>TOTONICAPAN</td><td> Zonas de xela:3, 4, 7, 6, 8, 9, 11, totonicapan y la Floresta Quetzaltenango</td><td>Occidente</td></tr>
+      <tr><td>OR1</td><td>IZABAL</td><td> Izabal</td><td>Oriente</td></tr>
+      <tr><td>OR2</td><td>PETEN</td><td> Peten </td><td>Oriente</td></tr>
+      <tr><td>OR3</td><td>EL PROGRESO, JALAPA</td><td> El Progreso y Jalapa</td><td>Oriente</td></tr>
+      <tr><td>OR4</td><td>CHIQUIMULA</td><td> Chiquimula</td><td>Oriente</td></tr>
+      <tr><td>OR5</td><td>ATA VERAPAZ, BAJA VERAPAZ</td><td> Alta y Baja Verapaz</td><td>Oriente</td></tr>
+      <tr><td>OR6</td><td>ZACAPA</td><td> Zacapa</td><td>Oriente</td></tr>
+      <tr><td>OR6</td><td>JALAPA</td><td> Jalapa</td><td>Oriente</td></tr>
+
+
+
+      <!-- Más filas -->
+    </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const table = document.querySelector('table tbody');
+      const rows = table.getElementsByTagName('tr');
+
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let rowContainsFilter = false;
+
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].innerText.toLowerCase().includes(filter)) {
+            rowContainsFilter = true;
+            break;
+          }
+        }
+
+        rows[i].style.display = rowContainsFilter ? '' : 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

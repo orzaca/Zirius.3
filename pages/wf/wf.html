@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas WF / Sirius +</title>
+     <link rel="preload" href="wf.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+</head>
+<body>
+
+    <div class="container">
+
+
+        <div class="titulo_wf">
+            <p><b>Plantillas WF</b></p>
+
+        </div>
+
+        <div class="message">
+            <p>Cambio de equipo por aumento de velocidad
+                <span class="toggle-button">[+]</span>
+            </p>
+            <div class="form-container">
+
+                
+                <form>
+                    <div>
+                        <label for="asunto">ASUNTO</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="ASUNTO" >
+                    </div>
+                    <div>
+                        <label for="titular">NOMBRE DE TITULAR</label>
+                        <input type="text" id="titular" name="titular" placeholder="NOMBRE TITULAR" >
+                    </div>
+                  
+                    <div>
+                        <label for="telefono">TEL.REF</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="TELEFONO">
+                    </div>
+                    <div>
+                        <label for="EquipoActual">EQUIPO ACTUAL</label>
+                        <input type="text" id="EquipoActual" name="EquipoActual" placeholder="EQUIPO ACTUAL">
+                    </div>
+                    <div>
+                        <label for="modelo">MODELO</label>
+                        <input type="text" id="modelo" name="modelo" placeholder="MODELO">
+                    </div>
+                    <div>
+                        <label for="direccion">DIRECCIÓN DE INSTALACIÓN</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="DIRECCIÓN DE INSTALACIÓN">
+                    </div>
+                    <div>
+                        <label for="horario">HORARIO DE VISITA</label>
+                        <input type="text" id="horario" name="horario" placeholder="HORARIO DE VISITA">
+                    </div>
+                    <div>
+                        <label for="observaciones">OBSERVACIONES</label>
+                        <input type="text" id="observaciones" name="observaciones" placeholder="OBSERVACIONES">
+                    </div>
+                    <div>
+                        <label for="call">CALL CENTER</label>
+                        <input type="text" id="call" name="call" placeholder="CALL CENTER">
+                    </div>
+                    <div> 
+                        <label for="nombre">NOMBRE ASESORS</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="NOMBRE ASESOR">
+                    </div>
+                    <div class="botones-copiar">
+                        <button type="button" onclick="copiarFormulario()">Copiar Memo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="message">
+            <p>
+                Orden de Servicio Conectividad
+                <span class="toggle-button">[+]</span>
+            </p>
+            <div class="form-container">
+                <form>
+                    <div>
+                        <label for="name2">ASUNTO</label>
+                        <input type="text" id="name2" name="name2" placeholder="ASUNTO">
+                    </div>
+                    <div>
+                        <label for="email2">NOMBRE DE TITULAR</label>
+                        <input type="email" id="email2" name="email2" placeholder="NOMBRE DE TITULAR">
+                    </div>
+                    <div>
+                        <label for="phone2">NO. DPI TITULAR</label>
+                        <input type="text" id="phone2" name="phone2" placeholder="NO. DPI TITULAR">
+                    </div>
+                    <div>
+                        <label for="address2">TEL REF</label>
+                        <input type="text" id="address2" name="address2" placeholder="TEL REF">
+                    </div>
+                    <div>
+                        <label for="city2">DIRECCIÓN DE INSTALACIÓN</label>
+                        <input type="text" id="city2" name="city2" placeholder="DIRECCIÓN DE INSTALACIÓN">
+                    </div>
+                    <div>
+                        <label for="state2">HORARIO DE VISITA</label>
+                        <input type="text" id="state2" name="state2" placeholder="HORARIO DE VISITA">
+                    </div>
+                    <div>
+                        <label for="zip2">OBSERVACIONES:</label>
+                        <input type="text" id="zip2" name="zip2" placeholder="OBSERVACIONES">
+                    </div>
+
+                    <div>
+                        <label for="zip2">CALL CENTER</label>
+                        <input type="text" id="zip2" name="zip2" value="SOPORTE CLARO">
+                    </div>
+                    <div>
+                        <label for="zip2">NOMBRE DE ASESOR:</label>
+                        <input type="text" id="zip2" name="zip2" placeholder="NOMBRE DE ASESOR">
+                    </div>
+                    <div class="botones-copiar">
+                        <button type="button" onclick="copiarFormulario()">Copiar Memo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+<script src="wf.js"></script>
+
+  
+</body>
+</html>

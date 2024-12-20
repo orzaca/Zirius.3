@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Manual</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+         header {
+              background-color: rgb(203, 67, 53);
+              color: white;
+              padding: 20px;
+              text-align: center;
+    }
+
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        input[type="file"], input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #f1948a;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #cb4335;
+        }
+
+        .alert {
+            padding: 15px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            width: 80%;
+        }
+
+        .alert.success {
+            background-color: #4CAF50;
+        }
+
+        .alert.error {
+            background-color: #f44336;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Subir Manual</h1>
+</header>
+
+<!-- Contenedor del formulario -->
+<div class="form-container">
+    <form action="upload_manual.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="manual" required>
+        <input type="text" name="manual_name" placeholder="Nombre del manual" required>
+        <button type="submit">Subir Manual</button>
+    </form>
+</div>
+
+<!-- Alerta de éxito o error -->
+<div id="alert" class="alert"></div>
+
+<script>
+    // Función para mostrar el mensaje de éxito o error
+    function showAlert(message, type) {
+        const alertDiv = document.getElementById('alert');
+        alertDiv.textContent = message;
+        alertDiv.className = `alert ${type}`;
+        alertDiv.style.display = 'block';
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(function() {
+            alertDiv.style.display = 'none';
+        }, 3000);
+    }
+
+    // Verificar si hay un mensaje de éxito o error
+    <?php if (isset($_SESSION['message'])): ?>
+        showAlert('<?php echo $_SESSION['message']; ?>', '<?php echo $_SESSION['message_type']; ?>');
+        <?php unset($_SESSION['message']); ?>
+        <?php unset($_SESSION['message_type']); ?>
+    <?php endif; ?>
+</script>
+
+</body>
+</html>

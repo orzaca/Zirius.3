@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white; /* Fondo blanco para toda la página */
+  height: 100%; /* Asegura que el cuerpo tenga la altura completa de la ventana */
+}
+
+.menu_quejas {
+  background-color: rgb(203, 67, 53);
+  padding: 15px;
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0; /* Asegura que esté en la parte superior de la página */
+  left: 0; /* Alinea la barra a la izquierda */
+  width: 100%; /* Hace que ocupe todo el ancho */
+  font-size: 12px;
+  list-style: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 1000; /* Asegura que la barra esté encima de otros elementos */
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header li {
+  float: left;
+  margin-right: 10px;
+}
+
+header a {
+  display: block; /* Hace que el enlace ocupe todo el espacio del li */
+  padding: 8px 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 4px;
+}
+
+header li:hover a {
+  background-color: #e6b0aa; /* Color de fondo en hover */
+  border-radius: 4px;
+  transform: scale(1.05); /* Efecto de aumento ligero */
+}
+
+main {
+  position: relative;
+  padding: 60px 10px 10px; /* Ajusta el padding superior para que no se solape con la barra fija */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.titulo_memo {
+  margin-bottom: 3px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.gpon_internet {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+  left: 10%; 
+  top: 25%; 
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(217, 136, 128, 0.8), rgba(169, 50, 38, 0.8));
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 350px; 
+}
+
+.form_quejas {
+  margin-bottom: 5px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 90%; /* Formulario más pequeño */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
+  margin: 0 auto; /* Centra el formulario dentro del contenedor */
+}
+
+.form_quejas input {
+  margin-bottom: 3px;
+  padding: 5px;
+  font-size: 12px; 
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  width: 320px;
+  box-sizing: border-box;
+}
+
+.form_quejas input:hover {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+}
+
+label {
+  display: none;
+  /* Oculta los textos de las etiquetas */
+}
+
+.boton_memo {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #7b241c; /* Borde del mismo color que el texto */
+  border-radius: 5px;
+  background: #fff;
+  color: #7b241c;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: background 0.3s, color 0.3s, transform 0.2s; /* Añadido el efecto de transformación */
+}
+
+.boton_memo:hover {
+  background: #f5b7b1;
+  color: #fff;
+  transform: translateY(-2px); /* Efecto de levantamiento al pasar el mouse */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.boton_memo:focus {
+  outline: none; /* Quita el contorno predeterminado */
+  box-shadow: 0 0 0 4px rgba(123, 36, 28, 0.5); /* Sombra al enfocar el botón */
+}

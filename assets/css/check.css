@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos básicos */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Ajuste para no tapar el contenido con el flow-selector */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #cb4335;
+    overflow: hidden;
+    position: fixed; /* Fijar el menú en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cambiar a 100% para que ocupe todo el ancho */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    padding: 5px 0; /* Reducir la altura del menú */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 25px; /* Tamaño más pequeño del icono */
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Alinear a la izquierda */
+}
+
+.navbar-list li {
+    margin: 0 5px; /* Espaciado reducido */
+}
+
+.navbar-list a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px; /* Reducción en el tamaño del padding */
+    text-decoration: none;
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-list a:hover {
+    background-color: #641e16;
+}
+
+.navbar-list a:active {
+    background-color: #641e16;
+}
+
+/* Estilo para el contenedor del paso */
+.step-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 5px 30px;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    justify-content: center;
+}
+
+.step-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.step-description {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.option-button {
+    display: inline-block;
+    margin: 10px 15px;
+    padding: 10px 20px;
+    background-color: #cb4335;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+    background-color: #f1948a;
+}
+
+.disabled {
+    background-color: #ccc;
+    color: #888;
+}
+
+.disabled:hover {
+    background-color: #ccc;
+}
+
+.back-button {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f1948a;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #641e16;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar-list {
+        display: none; /* Ocultar el menú por defecto */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-list li {
+        text-align: center;
+        margin: 5px 0; /* Espaciado más pequeño */
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el ícono de hamburguesa */
+        font-size: 24px; /* Tamaño más pequeño */
+    }
+
+    .navbar-list.show {
+        display: flex; /* Mostrar el menú cuando se haga clic en el ícono */
+    }
+}
+
+/* Estilos para el flow-selector */
+.flow-selector {
+    background-color: #f4f4f4; /* Fondo claro */
+    padding: 10px 20px; /* Espaciado */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    position: fixed; /* Fijar el selector en la parte superior */
+    top: 0; /* Asegura que se quede en la parte superior */
+    left: 0; /* Asegura que esté alineado con el borde izquierdo */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: flex-start; /* Alinea elementos a la izquierda */
+    align-items: center; /* Centra verticalmente */
+}
+
+.flow-selector form {
+    display: inline-block; /* Para centrar el formulario */
+    font-size: 6px; /* Tamaño de fuente */
+}
+
+
+
+.flow-selector label {
+    margin-right: 10px; /* Espacio entre la etiqueta y el select */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.flow-selector select {
+    padding: 8px 15px; /* Relleno dentro del select */
+    font-size: 16px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Borde del select */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el select */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.flow-selector select:focus {
+    outline: none; /* Elimina el borde azul del focus */
+    border-color: #cb4335; /* Borde azul al hacer focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.10); /* Sombra azul al hacer focus */
+}

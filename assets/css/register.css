@@ -1,0 +1,105 @@
+/* Estilos generales para el formulario de registro */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Fondo con gradiente más llamativo */
+    overflow: hidden;
+}
+
+.register-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+    transform: translateY(-5px); /* Elevación al pasar el ratón */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.register-form h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form input[type="text"]:focus,
+.register-form input[type="email"]:focus,
+.register-form input[type="password"]:focus {
+    border-color: #1e90ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.register-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-form button:hover {
+    background-color: #1c86e3;
+    transform: translateY(-3px);
+}
+
+.register-form button:active {
+    transform: translateY(1px);
+    background-color: #166bb5;
+}
+
+.register-form p.message {
+    margin: 10px 0;
+    color: #1e90ff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.register-form a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register-form a:hover {
+    color: #1c86e3;
+    text-decoration: underline;
+}

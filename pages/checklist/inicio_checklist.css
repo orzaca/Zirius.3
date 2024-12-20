@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: flex-start; /* Alinea los elementos dentro del contenedor hacia la izquierda */
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e8eaf6, #f5f5f5); /* Fondo suave en tonos claros */
+    overflow: hidden;
+}
+
+.principal_inicio {
+     position: absolute;
+    left: 10%;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido al inicio del contenedor */
+    text-align: left; /* Cambia la alineación del texto */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease forwards;
+    max-width: 600px;
+    width: 100%;
+    margin: 100px 0; /* Elimina el margen automático */
+    margin-left: 20px; /* Desplaza a la izquierda */
+}
+
+/* Efecto de animación de entrada */
+
+
+.titulo_menucheck {
+    font-size: 2em;
+    font-weight: 600;
+    color: #4A5568; /* Color suave que combina con el fondo */
+    margin-bottom: 30px;
+    transition: color 0.3s;
+}
+
+.titulo_menucheck:hover {
+    color: #718096;
+}
+
+.menu_iniciocheck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px; /* Agregado padding para evitar que los elementos toquen los bordes */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .menu_iniciocheck {
+        gap: 15px; /* Reduce el espacio entre elementos en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu_iniciocheck {
+        gap: 10px; /* Reduce aún más el espacio entre elementos en pantallas pequeñas */
+        padding: 5px; /* Reduce el padding para ahorrar espacio */
+    }
+}
+
+
+.menu_iniciocheck button {
+    background: linear-gradient(135deg, #DA291C, #FF6B6B); /* Gradiente en tonos pastel */
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 25px;
+    width: 180px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease; /* Transición más completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Efecto hover */
+.menu_iniciocheck button:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    background: linear-gradient(135deg, #FF6B6B, #DA291C); /* Invertir el gradiente en hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Aumenta el sombreado en hover */
+}
+
+/* Efecto cuando el botón está en estado activo */
+.menu_iniciocheck button:active {
+    transform: translateY(2px); /* Efecto de presión */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reducir sombra al hacer clic */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .menu_iniciocheck button {
+        width: 150px; /* Reducir el ancho de los botones en pantallas medianas */
+        padding: 12px 20px; /* Reducir el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu_iniciocheck button {
+        width: 120px; /* Reducir aún más el tamaño en pantallas pequeñas */
+        padding: 10px 15px; /* Ajustar padding en dispositivos móviles */
+        font-size: 0.9em; /* Reducir el tamaño de la fuente */
+    }
+}
+
+.menu_iniciocheck button i {
+    margin-right: 10px;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.menu_iniciocheck button:hover i {
+    transform: scale(1.2);
+}
+
+.menu_iniciocheck a {
+    text-decoration: none;
+    color: white;
+}

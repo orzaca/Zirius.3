@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Fondo degradado suave */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+    padding: 10px; /* Espacio para que no toque exactamente los bordes */
+}
+
+.paragraph-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra más destacada */
+    width: calc(33.333% - 20px); /* Cajas responsivas de un tercio */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+.paragraph-box:hover {
+    transform: scale(1.02) translateY(-10px); /* Efecto hover avanzado */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+button {
+    margin: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Botones más redondeados */
+    transition: background-color 0.4s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-4px) scale(1.05); /* Efecto hover animado */
+}
+
+.remove-button {
+    background-color: #e74c3c;
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 340px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.modal-content p {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.close-btn {
+    font-size: 22px;
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #2c3e50;
+}
+
+#editModal, #editModal2, #editModal3, #editModal4, #editModal5, #editModal6, #editModal7, #editModal8 {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.4s ease;
+}
+
+#editModal.active, #editModal2.active, #editModal3.active, #editModal4.active, #editModal5.active, #editModal6.active, #editModal7.active, #editModal8.active {
+    display: block;
+    opacity: 1;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.copy-btn, .edit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 14px;
+}
+
+.copy-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.edit-btn {
+    background-color: #ffc107;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
